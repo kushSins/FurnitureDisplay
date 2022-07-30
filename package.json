@@ -8,17 +8,42 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.8.5",
+    "@react-three/drei": "^9.13.2",
+    "@react-three/fiber": "^8.0.27",
+    "babel-plugin-relay": "^14.0.0",
+    "glsl-noise": "^0.0.0",
+    "glslify-loader": "^2.0.0",
+    "hamburger-react": "^2.5.0",
     "next": "12.1.6",
+    "raw-loader": "^4.0.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-relay": "^14.0.0",
+    "react-spring": "^9.5.2",
+    "three": "^0.141.0",
+    "troika-three-text": "^0.46.4"
   },
   "devDependencies": {
     "@types/node": "18.0.0",
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
+    "@types/react-relay": "^13.0.2",
+    "@types/three": "^0.141.0",
+    "babel-plugin-glsl": "^1.0.0",
     "eslint": "8.18.0",
     "eslint-config-next": "12.1.6",
+    "glslify": "^7.1.1",
+    "json-loader": "^0.5.7",
     "typescript": "4.7.4"
   }
 }
