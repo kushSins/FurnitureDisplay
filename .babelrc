@@ -1,4 +1,14 @@
 {
-  "presets": ["next/babel"],
-  "plugins": ["macros"]
+  "presets": [
+    "next/babel",
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": true
+        }
+      }
+    ]
+  ],
+  "plugins": ["macros", "@babel/plugin-proposal-class-properties"]
 }

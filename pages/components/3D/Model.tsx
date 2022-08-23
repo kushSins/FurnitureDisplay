@@ -6,12 +6,12 @@ import * as THREE from "three";
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import { useLoader } from "@react-three/fiber";
-import { TextureLoader } from "three";
+import { useFrame, useLoader } from "@react-three/fiber";
+import { Mesh, TextureLoader, Vector3 } from "three";
 import Candle from "./Candle";
 import Books from "./Books";
 import Window from "./Window";
-import MyFire from "../shaders/MyFire";
+import MyFire from "./MyFire";
 import Encyclopedia from "./Encyclopedia";
 
 type GLTFResult = GLTF & {
@@ -51,6 +51,11 @@ type GLTFResult = GLTF & {
 };
 
 export default function Model({ ...props }: JSX.IntrinsicElements["group"]) {
+  const plantRef = useRef<Mesh>(null!);
+  useFrame(({ camera }) => {
+    camera.lookAt(new Vector3(0.9, 2.1, 0));
+  });
+
   const { nodes } = useGLTF("/scene1.glb") as GLTFResult;
   const [
     skeleton,
@@ -184,6 +189,7 @@ export default function Model({ ...props }: JSX.IntrinsicElements["group"]) {
         />
       </group>
       <mesh
+        ref={plantRef}
         name="sofa"
         geometry={nodes.sofa.geometry}
         position={[-1.56, 0.51, -1.53]}
